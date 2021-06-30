@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "imgUrl": "../images/products/pd-1.jpg",
+    "itemNumber": "125515",
+    "sizeList": "8/8.5/9.5/10/11",
+    "brandName": "Adidas Shoes",
+    "price": 53
+  },
+  {
+    "id": 2,
+    "imgUrl": "../images/products/pd-2.jpg",
+    "itemNumber": "125515",
+    "sizeList": "8/8.5/9.5/10/11",
+    "brandName": "Adidas Shoes",
+    "price": 53
+  },
+  {
+    "id": 3,
+    "imgUrl": "../images/products/pd-3.jpg",
+  "itemNumber": "125515",
+  "sizeList": "8/8.5/9.5/10/11",
+  "brandName": "Adidas Shoes",
+  "price": 53
+},
+  {
+    "id": 4,
+    "imgUrl": "../images/products/pd-4.jpg",
+  "itemNumber": "125515",
+  "sizeList": "8/8.5/9.5/10/11",
+  "brandName": "Adidas Shoes",
+  "price": 53
+},
+  {
+    "id": 5,
+    "imgUrl": "../images/products/pd-5.jpg",
+  "itemNumber": "125515",
+  "sizeList": "8/8.5/9.5/10/11",
+  "brandName": "Adidas Shoes",
+  "price": 53
+},
+  {
+    "id": 6,
+    "imgUrl": "../images/products/pd-6.jpg",
+  "itemNumber": "125515",
+  "sizeList": "8/8.5/9.5/10/11",
+  "brandName": "Adidas Shoes",
+  "price": 53
+},
+  {
+    "id": 7,
+    "imgUrl": "../images/products/product-11.jpg",
+  "itemNumber": "125515",
+  "sizeList": "8/8.5/9.5/10/11",
+  "brandName": "Adidas Shoes",
+  "price": 53
+},
+  {
+    "id": 8,
+    "imgUrl": "../images/products/product-12.jpg",
+  "itemNumber": "125515",
+  "sizeList": "8/8.5/9.5/10/11",
+  "brandName": "Adidas Shoes",
+  "price": 53
+}
+]
