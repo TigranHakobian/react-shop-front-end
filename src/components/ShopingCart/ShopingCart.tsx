@@ -5,10 +5,10 @@ import {addProduct} from "../../store/actions/toCart";
 
 
 const ShopingCart = () => {
-   const [item, setItem] = useState('hello')
-    useEffect(() => {
-            addProduct(item);
-    },)
+   // const [item, setItem] = useState('hello')
+   //  useEffect(() => {
+   //          addProduct(item);
+   //  },)
     return (
         <Wrapper>
             <section className="shoping-cart spad">

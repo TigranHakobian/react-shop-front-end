@@ -17,8 +17,6 @@ const Home = (props: any) => {
     useEffect(() => {
         props.actionsProducts(sortBy)
     }, [sortBy]);
-    console.log('home sortBy', sortBy)
-    console.log('propa.prod Home', props.prod);
 
     return (
         <Wrapper>

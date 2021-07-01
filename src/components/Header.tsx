@@ -9,7 +9,12 @@ import Search from "./Search"
 import Navigetion from "./Navigetion"
 import {connect} from "react-redux";
 
+
 const Header = (props:any) => {
+
+    console.log(props.product.AddToCart.product)
+
+
     return (
         <>
             <header className="header">
@@ -30,7 +35,8 @@ const Header = (props:any) => {
                         <div className="col-lg-3">
                             <div className="header__cart">
                                 <ul>
-                                    <li><i className="fa fa-heart"/> <span>1</span></li>
+                                    <li>
+                                        <i className="fa fa-heart"/> <span>1</span></li>
                                     <li>
                                         <Link to="/shopingCart"><i className="fa fa-shopping-bag"/>
                                         <span>{props.product.AddToCart.product.length}</span>

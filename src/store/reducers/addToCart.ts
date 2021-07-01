@@ -1,22 +1,6 @@
 import {ADD_PRODUCT} from "../actions/toCart";
-import {REMOVE_PRODUCT} from "../actions/toCart";
-
-
-
-// interface IMyObject {
-//     a: number;
-//     b: number;
-// }
-
-// interface IState {
-//     array: IMyObject[];
-// }
-
-
 
 let product: string[]=[]
-
-
 
 const initialState = {
     product
@@ -25,30 +9,15 @@ const initialState = {
 export default function reducer(state = initialState, action:any) {
     switch (action.type) {
         case ADD_PRODUCT: {
-            const { product } = state;
-            console.log("action",action)
-            const  payload  = action.payload;
-            product.push(payload)
-
-            return {
-                ...state,
-                product:[...product]
-            }
-        }
-        case REMOVE_PRODUCT: {
             let { product } = state;
-            const { id } = action.payload;
+            product = JSON.parse(localStorage.getItem("prod") as string)
 
-            product = product.filter((x:any) => x.id !== id)
-
-            console.log(id)
-
+            console.log(1111111111,product)
             return {
                 ...state,
-                product: [...product]
+                product
             }
         }
-
 
         default: {
             return state;

@@ -21,5 +21,16 @@ export const getProducts = async (sortBy:string) => {
     }
 };
 
+export const buyProducts = async () => {
+    try {
+        const response = await fetch(`http://localhost:3333/buys`);
+        const data = await response.json();
+        return data.data;
+    } catch (e) {
+        console.log(e)
+    }
+};
+
+
 
 

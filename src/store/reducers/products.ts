@@ -7,8 +7,6 @@ const initialState: StateType = {
 
 type InitialState = typeof initialState;
 
-
-
 export default function reducer(state:StateType = initialState, action:any): InitialState{
 
     switch (action.type) {
@@ -21,6 +19,7 @@ export default function reducer(state:StateType = initialState, action:any): Ini
                 prodData:  action.payload.prodDataSaga
             };
         }
+
         case PRODUCTS_FAIL: {
             return {...state};
         }

@@ -1,15 +1,22 @@
 import React,{useState} from "react";
 import {connect} from "react-redux";
-import {removeProduct} from "../../store/actions/toCart";
+import {addProduct} from "../../store/actions/toCart";
+import {log} from "util";
 
 
 
 const TableShopingCart = (props:any) =>{
 
+    const localProd = JSON.parse( localStorage.getItem("prod") as string)
+
+
     const  [count,setCount] = useState(1)
 
-    const removeItem = (id:number) =>{
-        props.removeProduct(id)
+    const removeItem = (title:string) =>{
+        const filtered =  localProd.filter((i:any)=>i.title !== title)
+        localStorage.setItem("prod",JSON.stringify(filtered))
+        console.log(filtered)
+        props.addProduct()
     }
 
     const countChange = (event:any) =>{
@@ -17,7 +24,12 @@ const TableShopingCart = (props:any) =>{
         setCount(event.target.value)
     }
 
-   const localProd = JSON.parse( localStorage.getItem("prod") as string)
+
+
+
+
+
+
 
     return(
         <div className="row">
@@ -47,7 +59,7 @@ const TableShopingCart = (props:any) =>{
                                         <input type="text" onChange={countChange}/>
                                      </td>
                                     <td className="shoping__cart__item__close">
-                                        <span className=""><i onClick={() =>removeItem(item.id)} className="fa fa-remove"/></span>
+                                        <span className=""><i onClick={() =>removeItem(item.title)} className="fa fa-remove"/></span>
                                     </td>
                                 </tr>
                             ))
@@ -68,7 +80,7 @@ const mapSateToProps = (state:any) => ({
 })
 
 const mapDispatchToProps = {
-    removeProduct,
+    addProduct,
 }
 
 const Container = connect(

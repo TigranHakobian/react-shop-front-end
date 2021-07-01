@@ -1,22 +1,20 @@
 import React, {useState} from "react";
 import {connect} from "react-redux";
 import {actionsProducts} from "../../store/actions/products";
+import {addProduct} from "../../store/actions/toCart";
+
 
 
 const Products = (props: any) => {
 
+    props.addProduct()
+
     const [prodArr, setProdArr]= useState<any>([])
 
-    //
-    //
-    // useEffect(() => {
-    //     props.actionsProducts()
-    // }, [props.sortBy]);
     const oddToCart = (item:any) =>{
+
         // debugger;
-
         const chackProd =  JSON.parse(localStorage.getItem("prod") as string)
-
         console.log(chackProd)
 
         if (!chackProd.length){
@@ -30,32 +28,25 @@ const Products = (props: any) => {
         }else{
             const isFound  = () =>{
                 for(let i = 0; i < chackProd.length; i++){
-                    if (chackProd[i].id === item.id){
+                    if (chackProd[i].title === item.title){
                         return false
                     }
                 }
                 return true
             }
             if (isFound()){
-                chackProd.map((i:any) => (
                      setProdArr([...prodArr, {
                         id: item.id,
                         price: item.price,
                         title: item.title,
                         image:item.image,
                     }])
-                )
-                )
             }else{
                 chackProd.map((i:any) => (
-                    item.id === i.id?  i.count = i.count +  1:null
+                    item.title === i.title?  i.count = i.count +  1:null
                 ))
             }
-
-
         }
-
-
     }
 
     localStorage.setItem("prod",JSON.stringify(prodArr))
@@ -91,11 +82,11 @@ const Products = (props: any) => {
 
 
 const mapStateToProps = (props: any) => ({
-    // prod: props.products.prodData
 });
 
 const mapDispatchToProps = {
     actionsProducts,
+    addProduct
 };
 const ProductsContainer = connect(mapStateToProps, mapDispatchToProps)(Products);
 
